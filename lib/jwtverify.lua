@@ -173,6 +173,8 @@ function jwtverify(txn)
     log("req.authorized = true")
     txn.set_var(txn, "txn.authorized", true)
 
+	-- 9. EWS specific requirement
+	txn.set_var(txn, "txn.payload", token.payloaddecoded)
     -- exit
     do return end
 
