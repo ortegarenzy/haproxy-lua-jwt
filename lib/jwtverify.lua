@@ -174,6 +174,7 @@ function jwtverify(txn)
     txn.set_var(txn, "txn.authorized", true)
 
 	-- 9. EWS specific requirement
+	log("txn.user = " .. token.payloaddecoded.user)
 	if token.payloaddecoded.user ~= nil then
 		txn.set_var(txn, "txn.user", token.payloaddecoded.user)
 	end
